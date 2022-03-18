@@ -1,0 +1,28 @@
+1. Установить EFCore
+Nuget Microsoft.EntityFrameworkCore.SqlServer
+
+- DbContext 
+  Абстракция подключения к ДБ
+  Абстракция работы с дб
+  Время жизни IDispose
+
+- DbSet
+  Абстракт таблиц Дб
+  Абстракция объекта
+  Звено реляц и объект моделями
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+
+@"Server=(localdb)\mssqllocaldb;Database=EfCoreBasicDb;Trusted_Connection=True;"
+Check SQL Manager Studio        (localdb)\mssqllocaldb
+
+
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.UserSecrets;
+
+Открыть папку с Мain заупстить cmd
+dotnet user-secrets init
+Добавиться <UserSecretsId>b4596d50-7436-4d57-93ab-84c707a8cd0c</UserSecretsId>
+Сохраняем
+dotnet user-secrets set ConnectionStrings:EfCoreBasicDatabase "Server=(localdb)\mssqllocaldb;Database=EfCoreBasicDb;Trusted_Connection=True;"
